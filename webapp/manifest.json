@@ -1,0 +1,90 @@
+{
+  "manifest_version": 2,
+  "name": "生意参谋助手",
+  "version": "1.0.0",
+  "description": "生意参谋助手",
+  "icons":
+  {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://hm.baidu.com/hm.js; object-src 'self'",
+  "background":
+  {
+    "default_icon": "icon.png",
+    "default_popup": "background.html"
+  },
+  "browser_action":
+  {
+    "default_title": "生意参谋助手"
+  },
+
+  "content_scripts":
+  [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "js/jquery-3.4.1.min.js",
+        "js/layui.js",
+        "js/content-script.js"
+      ],
+      "css": [
+        "css/custom.css",
+        "css/layui.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames":true
+    }
+  ],
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "tabs",
+    "storage",
+    "unlimitedStorage",
+    "webRequest",
+    "management",
+    "webRequestBlocking",
+    "*://*.jiyoujia.com/*",
+    "*://*.jd.com/*",
+    "*://*.tqdn.cn/*",
+    "*://*.taobao.com/*",
+    "*://*.alimama.com/*",
+    "*://*.tmall.com/*",
+    "*://*.tmall.hk/*",
+    "*://*.alitrip.com/*",
+    "*://*.yao.95095.com/*",
+    "*://*.fliggy.com/*",
+    "*://*.liangxinyao.com/*",
+    "*://*.kandianbao.com/*",
+    "*://*.kandianbao.cn/*",
+    "*://*.xuedianshang.com/*",
+    "*://*.kandianshang.com/*",
+    "*://*.kandianshang.net/*",
+    "*://*.kandianshang.cn/*",
+    "*://*.dianzhentan.com/*",
+    "*://*.dianshangyi.com/*",
+    "*://*.wangtanzhang.com/*",
+    "*://*.xiaowangshen.com/*",
+    "*://*.duoduocha.com/*",
+    "*://*.dianshuju.com/*",
+    "*://*.huoyankan.com/*",
+    "*://*.doushangyan.com/*",
+    "*://*.doushangyan.com/*",
+    "*://*.taoboyan.com/*",
+    "*://*.kuaishangyan.com/*",
+    "*://*.wangcanmou.com/*",
+    "*://*.maijia800.com/*",
+    "*://*.baidu.com/*",
+    "*://*.alicdn.com/*",
+    "*://*.so.com/*",
+    "*://*.sogou.com/*",
+    "*://cn.bing.com/*",
+    "*://*.google.com/*"
+  ],
+  "web_accessible_resources": [
+    "js/*",
+    "css/*"
+  ]
+}
